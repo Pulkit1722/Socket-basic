@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://cdn.socket.io/4.3.2/socket.io.min.js" integrity="sha384-KAZ4DtjNhLChOB/hxXuKqhMLYvx3b5MlT55xPEiNmREKRzeEm+RVPlTnAn0ajQNs" crossorigin="anonymous"></script>
+    <script>
+      const socket = io();
+    </script>
+</head>
+<body>
+  <input type="text" class="message" >
+  <button onclick="myFunction()">Send</button>
+ <h1></h1>
+  <script>
+  const socket = io('https://localhost:3001');
+  socket.on('connection')
+</script>
+<script>
+  socket.on("message",(data)=>{
+    console.log(data);
+    document.querySelector('h1').innerHTML=data
+  })</script>
+  
+  <script>function myFunction(){
+    const messages= document.querySelector('.message')
+    const message=messages.value
+    socket.emit('message', message)
+  }
+  
+  </script>
+  
+  
+</body>
+</html>
